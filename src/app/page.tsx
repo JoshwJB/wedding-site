@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { cx } from 'class-variance-authority'
 import { parisienne } from '@/app/fonts'
 
@@ -22,7 +21,7 @@ export default function Home() {
                 </h3>
             </div>
 
-            <div className="flex min-h-screen w-full flex-col bg-background/90 p-24"></div>
+            {/*<div className="flex min-h-screen w-full flex-col bg-background/90 p-24"></div>*/}
         </main>
     )
 }
