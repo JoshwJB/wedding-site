@@ -31,7 +31,7 @@ export default function Home() {
                     </div>
 
                     <div>
-                        <span className="text-lg font-semibold uppercase lg:text-xl">
+                        <span className="text-lg font-semibold uppercase underline lg:text-xl">
                             Where:
                         </span>
                         <a
