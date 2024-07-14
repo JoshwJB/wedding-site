@@ -3,12 +3,13 @@ import { parisienne } from '@/app/fonts'
 import clandeboyeLodge from '../../public/clandeboye-2.jpg'
 import wreath from '../../public/botanical-wreath.svg'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Home() {
     return (
-        <main className="text-wedding-100 m-8 sm:m-12 md:m-24">
+        <main className="m-8 text-wedding-100 sm:m-12 md:m-24">
             <div className="mx-auto max-w-[1400px]">
-                <div className="border-wedding-300 relative w-full rounded-t-[10rem] border-4 border-double">
+                <div className="relative w-full rounded-t-[10rem] border-4 border-double border-wedding-300">
                     <Image
                         alt="Wreath top left"
                         src={wreath}
@@ -42,13 +43,13 @@ export default function Home() {
                     </h1>
                 </div>
 
-                <div className="border-wedding-300 -mt-1 grid w-full grid-cols-1 overflow-hidden rounded-b-[10rem] border-4 border-double md:grid-cols-2">
-                    <div className="border-wedding-300 flex flex-col justify-center gap-12 border-double p-12 max-md:border-b-4 md:border-r-4">
+                <div className="-mt-1 grid w-full grid-cols-1 overflow-hidden rounded-b-[10rem] border-4 border-double border-wedding-300 md:grid-cols-2">
+                    <div className="flex flex-col justify-center gap-12 border-double border-wedding-300 p-12 max-md:border-b-4 md:border-r-4">
                         <div>
                             <span className="text-lg font-semibold uppercase lg:text-xl">
                                 When:
                             </span>
-                            <h2 className="text-wedding-50 text-2xl font-semibold uppercase lg:text-3xl">
+                            <h2 className="text-2xl font-semibold uppercase text-wedding-50 lg:text-3xl">
                                 29 October 2024 - 2:30pm
                             </h2>
                         </div>
@@ -62,18 +63,18 @@ export default function Home() {
                                 rel="noreferrer nofollow"
                                 target="_blank"
                             >
-                                <h2 className="text-wedding-50 text-2xl font-semibold uppercase underline lg:text-4xl">
+                                <h2 className="text-2xl font-semibold uppercase text-wedding-50 underline lg:text-3xl">
                                     Clandeboye Lodge
                                 </h2>
                             </a>
                         </div>
 
-                        <button
-                            className="text-wedding-50 border-wedding-100 w-full cursor-pointer self-center border-4 border-double py-6 text-xl md:w-fit md:px-12 md:text-3xl lg:px-24 lg:py-8"
-                            disabled
+                        <Link
+                            className="w-full cursor-pointer self-center border-4 border-double border-wedding-100 py-6 text-xl text-wedding-50 transition-colors hover:bg-wedding-500 md:w-fit md:px-12 md:text-3xl lg:px-24 lg:py-8"
+                            href="/rsvp"
                         >
                             RSVP
-                        </button>
+                        </Link>
                     </div>
 
                     <div>
