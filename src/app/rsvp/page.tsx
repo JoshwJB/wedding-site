@@ -3,6 +3,8 @@ import { parisienne } from '@/app/fonts'
 import wreath from '../../../public/botanical-wreath.svg'
 import Image from 'next/image'
 import Link from 'next/link'
+import { submitRsvp } from '@/app/rsvp/actions'
+import RsvpForm from '@/app/rsvp/rsvp-form'
 
 export default function Rsvp() {
     return (
@@ -45,7 +47,8 @@ export default function Rsvp() {
                 </div>
 
                 <div className="-mt-1 w-full overflow-hidden rounded-b-[10rem] border-4 border-double border-wedding-300 p-12 py-24">
-                    <h2 className="text-center text-6xl">RSVP</h2>
+                    <h2 className="mb-8 text-center text-6xl">RSVP</h2>
+                    <RsvpForm submitRsvp={submitRsvp} />
                 </div>
             </div>
         </main>
