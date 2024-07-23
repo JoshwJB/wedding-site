@@ -29,19 +29,19 @@ import {
 } from '@/components/ui/select'
 import { useState } from 'react'
 
-enum STARTERS {
+export enum STARTERS {
     ROASTED_TOMATO_SOUP = 'ROASTED_TOMATO_SOUP',
     SMOKED_SALMON = 'SMOKED_SALMON',
     KIDS_MENU = 'KIDS_MENU',
 }
 
-enum MAINS {
+export enum MAINS {
     CHICKEN = 'CHICKEN',
     BEEF = 'BEEF',
     KIDS_MENU = 'KIDS_MENU',
 }
 
-enum DESERTS {
+export enum DESERTS {
     CHOCOLATE_TART = 'CHOCOLATE_TART',
     PANNA_COTTA = 'PANNA_COTTA',
     KIDS_MENU = 'KIDS_MENU',

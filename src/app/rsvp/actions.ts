@@ -3,6 +3,10 @@
 import { z } from 'zod'
 import { rsvpFormSchema } from '@/app/rsvp/rsvp-form'
 import { PrismaClient } from '@prisma/client'
+import { Resend } from 'resend'
+import RsvpEmail from '../../../emails'
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function submitRsvp(formEvent: z.infer<typeof rsvpFormSchema>) {
     const prisma = new PrismaClient()
@@ -35,6 +39,13 @@ export async function submitRsvp(formEvent: z.infer<typeof rsvpFormSchema>) {
             })
         )
     )
+
+    await resend.emails.send({
+        from: 'Catherine and Joshua <rsvp@catherineandjoshua.wedding>',
+        to: [formEvent.email],
+        subject: "RSVP Confirmation for Catherine & Joshua's Wedding",
+        react: RsvpEmail({ rsvpFormDetails: formEvent }),
+    })
 }
 
 export type SubmitRsvp = typeof submitRsvp
