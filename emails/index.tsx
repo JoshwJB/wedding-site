@@ -67,10 +67,10 @@ export const RsvpEmail = ({ rsvpFormDetails }: RsvpEmailProps) => {
                             <br /> Catherine & Joshua's Wedding
                         </Heading>
                         <Text className="text-[18px] font-medium leading-[24px] text-white">
-                            Location: Clandeboye Lodge
+                            When: 29 October 2024 - 2:30pm
                         </Text>
                         <Text className="text-[18px] font-medium leading-[24px] text-white">
-                            Time: 2:30pm
+                            Where: Clandeboye Lodge
                         </Text>
 
                         <Text className="mt-[24px] text-[20px] leading-[24px] text-white">
