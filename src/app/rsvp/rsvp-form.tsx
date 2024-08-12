@@ -128,9 +128,9 @@ export interface RsvpFormProps {
 }
 
 export default function RsvpForm({ submitRsvp }: RsvpFormProps) {
-    const [formState, setFormState] = useState<'FORM' | 'LOADING' | 'SUCCESS'>(
-        'FORM'
-    )
+    const [formState, setFormState] = useState<
+        'FORM' | 'LOADING' | 'INVALID_CODE' | 'SUCCESS'
+    >('FORM')
 
     const form = useForm<z.infer<typeof rsvpFormSchema>>({
         resolver: zodResolver(rsvpFormSchema),
@@ -143,8 +143,9 @@ export default function RsvpForm({ submitRsvp }: RsvpFormProps) {
 
     const onSubmit = async (values: z.infer<typeof rsvpFormSchema>) => {
         setFormState('LOADING')
-        await submitRsvp(values)
-        setFormState('SUCCESS')
+        const response = await submitRsvp(values)
+        if (response === 200) setFormState('SUCCESS')
+        if (response === 417) setFormState('INVALID_CODE')
     }
 
     return formState === 'FORM' ? (
@@ -704,13 +705,27 @@ export default function RsvpForm({ submitRsvp }: RsvpFormProps) {
         </Form>
     ) : formState === 'LOADING' ? (
         <h2 className="text-center text-4xl">Saving your response...</h2>
-    ) : (
+    ) : formState === 'SUCCESS' ? (
         <div className="flex flex-col items-center justify-center">
             <h2 className="text-4xl">Success</h2>
             <p className="text-lg">
                 You should receive a confirmation email at{' '}
                 {form.getValues().email} shortly.
             </p>
+        </div>
+    ) : (
+        <div className="flex flex-col items-center justify-center gap-4">
+            <h2 className="text-4xl">Invalid RSVP Code</h2>
+            <p className="text-lg">
+                Please double check the entered RSVP code (you can find this on
+                your wedding invitation).
+            </p>
+            <button
+                className="w-full cursor-pointer self-center justify-self-center border-4 border-double border-wedding-100 py-6 text-xl text-wedding-50 transition-colors hover:bg-wedding-500 md:col-span-3 md:w-fit md:px-12 md:text-3xl lg:px-24 lg:py-8"
+                onClick={() => setFormState('FORM')}
+            >
+                Back to Form
+            </button>
         </div>
     )
 }

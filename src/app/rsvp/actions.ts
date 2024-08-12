@@ -8,7 +8,13 @@ import RsvpEmail from '../../../emails'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-export async function submitRsvp(formEvent: z.infer<typeof rsvpFormSchema>) {
+export async function submitRsvp(
+    formEvent: z.infer<typeof rsvpFormSchema>
+): Promise<number> {
+    console.log('RSVP submitted with form values:', formEvent)
+    if (formEvent.rsvpCode !== '291024') {
+        return 417
+    }
     const prisma = new PrismaClient()
     console.log('Creating RSVP for USER', formEvent)
     const user = await prisma.user.create({
@@ -47,6 +53,8 @@ export async function submitRsvp(formEvent: z.infer<typeof rsvpFormSchema>) {
         subject: "RSVP Confirmation for Catherine & Joshua's Wedding",
         react: RsvpEmail({ rsvpFormDetails: formEvent }),
     })
+
+    return 200
 }
 
 export type SubmitRsvp = typeof submitRsvp
