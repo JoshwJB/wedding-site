@@ -38,6 +38,7 @@ export enum STARTERS {
 export enum MAINS {
     CHICKEN = 'CHICKEN',
     BEEF = 'BEEF',
+    VEGETARIAN = 'VEGETARIAN',
     KIDS_MENU = 'KIDS_MENU',
 }
 
@@ -314,6 +315,12 @@ export default function RsvpForm({ submitRsvp }: RsvpFormProps) {
                                             Twice cooked point cut of beef with
                                             onion and stout gravy
                                         </SelectItem>
+                                        <SelectItem value={MAINS.VEGETARIAN}>
+                                            Filo pastry with cauliflower, butter
+                                            beans and spiced pumpkin cream,
+                                            served with a seasonal salad.
+                                            (Vegetarian)
+                                        </SelectItem>
                                         <SelectItem value={MAINS.KIDS_MENU}>
                                             Kids Option (Farm Barn - Chicken
                                             Goujons, waffles and veg)
@@ -322,9 +329,10 @@ export default function RsvpForm({ submitRsvp }: RsvpFormProps) {
                                 </Select>
                             </FormControl>
                             <FormDescription>
-                                All mains are served with seasonal, fresh
-                                vegetables, Hamilton&apos;s country potato mash,
-                                and rosemary roasted potatoes
+                                All mains (bar vegetarian/kids menu) are served
+                                with seasonal, fresh vegetables, Hamilton&apos;s
+                                country potato mash, and rosemary roasted
+                                potatoes
                             </FormDescription>
                             <FormMessage />
                         </FormItem>
@@ -362,8 +370,7 @@ export default function RsvpForm({ submitRsvp }: RsvpFormProps) {
                                             prunes and hazelnut croquante
                                         </SelectItem>
                                         <SelectItem value={DESERTS.KIDS_MENU}>
-                                            Kids Option (TBA - probably ice
-                                            cream)
+                                            Kids Option (Ice cream)
                                         </SelectItem>
                                     </SelectContent>
                                 </Select>
@@ -540,6 +547,15 @@ export default function RsvpForm({ submitRsvp }: RsvpFormProps) {
                                                     gravy
                                                 </SelectItem>
                                                 <SelectItem
+                                                    value={MAINS.VEGETARIAN}
+                                                >
+                                                    Filo pastry with
+                                                    cauliflower, butter beans
+                                                    and spiced pumpkin cream,
+                                                    served with a seasonal
+                                                    salad. (Vegetarian)
+                                                </SelectItem>
+                                                <SelectItem
                                                     value={MAINS.KIDS_MENU}
                                                 >
                                                     Kids Option (Farm Barn -
@@ -550,10 +566,10 @@ export default function RsvpForm({ submitRsvp }: RsvpFormProps) {
                                         </Select>
                                     </FormControl>
                                     <FormDescription>
-                                        All mains are served with seasonal,
-                                        fresh vegetables, Hamilton&apos;s
-                                        country potato mash, and rosemary
-                                        roasted potatoes
+                                        All mains (bar vegetarian/kids menu) are
+                                        served with seasonal, fresh vegetables,
+                                        Hamilton&apos;s country potato mash, and
+                                        rosemary roasted potatoes
                                     </FormDescription>
                                     <FormMessage />
                                 </FormItem>
@@ -599,8 +615,7 @@ export default function RsvpForm({ submitRsvp }: RsvpFormProps) {
                                                 <SelectItem
                                                     value={DESERTS.KIDS_MENU}
                                                 >
-                                                    Kids Option (TBA - probably
-                                                    ice cream)
+                                                    Kids Option (Ice cream)
                                                 </SelectItem>
                                             </SelectContent>
                                         </Select>

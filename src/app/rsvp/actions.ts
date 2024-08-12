@@ -43,6 +43,7 @@ export async function submitRsvp(formEvent: z.infer<typeof rsvpFormSchema>) {
     await resend.emails.send({
         from: 'Catherine and Joshua <rsvp@catherineandjoshua.wedding>',
         to: [formEvent.email],
+        bcc: ['josh+weddingrsvp@jwjb.dev'],
         subject: "RSVP Confirmation for Catherine & Joshua's Wedding",
         react: RsvpEmail({ rsvpFormDetails: formEvent }),
     })
