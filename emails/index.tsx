@@ -34,6 +34,8 @@ export const RsvpEmail = ({ rsvpFormDetails }: RsvpEmailProps) => {
             return 'Breast of manor farm chicken with chestnut mushrooms and madeira jus'
         } else if (starter === 'BEEF') {
             return 'Twice cooked point cut of beef with onion and stout gravy'
+        } else if (starter === 'VEGETARIAN') {
+            return 'Filo pastry with cauliflower, butter beans and spiced pumpkin cream, served with a seasonal salad. (Vegetarian)'
         } else {
             return 'Kids Option (Farm Barn - Chicken Goujons, waffles and veg)'
         }
@@ -45,7 +47,7 @@ export const RsvpEmail = ({ rsvpFormDetails }: RsvpEmailProps) => {
         } else if (starter === 'PANNA_COTTA') {
             return 'Panna cotta with brandy-soaked prunes and hazelnut croquante'
         } else {
-            return 'Kids Option (probably ice cream)'
+            return 'Kids Option (Ice cream)'
         }
     }
 
