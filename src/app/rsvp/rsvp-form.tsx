@@ -435,7 +435,7 @@ export default function RsvpForm({ submitRsvp }: RsvpFormProps) {
                         key={item.id}
                         className="grid w-full grid-cols-1 gap-x-4 gap-y-8 md:col-span-6 md:grid-cols-6"
                     >
-                        <div className="col-span-6 flex items-center justify-between gap-4">
+                        <div className="flex items-center justify-between gap-4 md:col-span-6">
                             <h2 className="text-2xl">
                                 Extra Person #{index + 1}{' '}
                                 {item.name ? ` - ${item.name}` : ''}
