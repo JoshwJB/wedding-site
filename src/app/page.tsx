@@ -69,12 +69,12 @@ export default function Home() {
                             </a>
                         </div>
 
-                        <Link
-                            className="w-full cursor-pointer self-center border-4 border-double border-wedding-100 py-6 text-center text-xl text-wedding-50 transition-colors hover:bg-wedding-500 md:w-fit md:px-12 md:text-3xl lg:px-24 lg:py-8"
-                            href="/rsvp"
+                        <button
+                            className="w-full cursor-not-allowed self-center border-4 border-double border-wedding-100 py-6 text-center text-xl uppercase text-wedding-50 transition-colors hover:bg-wedding-500 md:w-fit md:px-12 md:text-3xl lg:px-24 lg:py-8"
+                            disabled
                         >
-                            RSVP
-                        </Link>
+                            RSVP Closed
+                        </button>
                     </div>
 
                     <div>
