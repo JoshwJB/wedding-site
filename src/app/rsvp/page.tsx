@@ -5,8 +5,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { submitRsvp } from '@/app/rsvp/actions'
 import RsvpForm from '@/app/rsvp/rsvp-form'
+import { redirect } from 'next/navigation'
 
 export default function Rsvp() {
+    redirect('/')
+
     return (
         <main className="m-8 text-wedding-100 sm:m-12 md:m-24">
             <div className="mx-auto max-w-[1400px]">
